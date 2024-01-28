@@ -1,0 +1,29 @@
+<%- include('./modal-title.ejs') %> <strong>Checkout</strong> <%-
+include('./modal-body.ejs') %>
+<div class="col-6 mt-2">
+  <label for="card-number">Card Number</label>
+  <input
+    type="text"
+    id="card-number"
+    name="cardNumber"
+    placeholder="Enter Card Number"
+    required
+  />
+</div>
+<div class="col-3 mt-2">
+  <label for="cvc">CVC</label>
+  <input type="text" id="cvc" name="cvc" placeholder="CVC" required />
+</div>
+<div class="col-3 mt-2">
+  <label for="expiry-date">Expiry Date</label>
+  <input
+    type="text"
+    id="expiry-date"
+    name="expiryDate"
+    placeholder="Enter Expiry Date"
+    pattern="\d{2}/\d{2}"
+    required
+  />
+</div>
+<button class="btn btn-success" type="submit">Pay Now</button>
+<%- include('./modal-end.ejs') %>

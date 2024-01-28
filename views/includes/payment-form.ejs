@@ -1,0 +1,69 @@
+<form
+  class="h-100 d-flex flex-column justify-content-center align-items-center position-relative top-100"
+  action="/"
+  method="post"
+  id="payment-form"
+>
+  <div class="form-group col-3 mt-2">
+    <label for="customer-name">Customer Name</label>
+    <input
+      type="text"
+      class="form-control"
+      id="customer-name"
+      name="customerName"
+      placeholder="Enter Customer Name"
+      required
+    />
+  </div>
+  <div class="form-group col-3 mt-2">
+    <label for="amount">Price &#40;Amount&#41;</label>
+    <input
+      type="number"
+      class="form-control"
+      id="amount"
+      name="price"
+      placeholder="Enter Amount"
+      required
+    />
+  </div>
+  <div class="form-group col-3 mt-2">
+    <label for="currency">Currency</label>
+    <select
+      name="currency"
+      class="form-select"
+      id="currency"
+      aria-label="Currency select"
+      required
+    >
+      <option selected disabled>Select Currency</option>
+      <option value="USD">USD</option>
+      <option value="EUR">EUR</option>
+      <option value="THB">THB</option>
+      <option value="HKD">HKD</option>
+      <option value="SGD">SGD</option>
+      <option value="AUD">AUD</option>
+    </select>
+  </div>
+
+  <div
+    class="modal fade checkout text-center"
+    id="checkout"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="myLargeModalLabel"
+    aria-hidden="true"
+  >
+    <%- include('./checkout-modal.ejs') %>
+  </div>
+</form>
+
+<div class="d-flex justify-content-center">
+  <button
+    data-bs-toggle="modal"
+    class="checkout-button btn btn-primary"
+    data-bs-target="#checkout"
+    href="checkout"
+  >
+    Proceed to Checkout
+  </button>
+</div>
