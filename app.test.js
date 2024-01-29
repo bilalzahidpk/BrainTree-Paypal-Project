@@ -39,7 +39,7 @@ describe('POST /', () => {
       jest.clearAllMocks();
     });
     test('Should respond 302 with Amex cards with currency specified other than USD', async () => {
-      creditCardType.mockReturnValue([{ type: 'visa' }]);
+      creditCardType.mockReturnValue([{ type: 'american-express' }]);
 
       const response = await request(app).post('/').send({
         customerName: '123',
